@@ -1,0 +1,17 @@
+// Imports of others SCSS files
+@use './abstracts/colors';
+
+// Generalities of the CSS code
+*{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+body{
+    background-color: colors.$white-page;
+}
+
+@import 'card';
