@@ -2,46 +2,65 @@
 @use './abstracts/colors';
 
 main{
+    position: relative;
     width: 500px;
-    height: 800px;
+    height: 600px;
     margin: 50px auto;
+    overflow: hidden;
     display: grid;
-    grid-template-rows: 300px 500px;
-    article:nth-child(1){
-        background-color: colors.$white-card;
+    grid-template-rows: 300px 300px;
+    transition: grid-template-rows 1s;
+    &:hover{
+        box-shadow: (0px 0px 20px 15px rgba(0, 0, 0, 0.37));
+        grid-template-rows: 150px 450px;
+        #picture{
+            filter : opacity(50%);
+            transform: scale(1.4);
+        }
+    }
+    #date{
+        background-color: colors.$red-card;
         color: colors.$white-card;
+        border-radius: 50%;
+        padding: 10px;
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
         text-align: center;
+        line-height: 25px;
+    }
+    #picture{
+        background-color: colors.$white-card;
         background-image: url(./img/india-child.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
+        overflow: hidden;
+    }
+    #content{
+        background-color: colors.$white-card;
+        text-align: center;
+        z-index: 5;
         section:nth-child(1){
+            position: relative;
+            margin-top: -30px;
             background-color: colors.$red-card;
-            border-radius: 50%;
-            padding: 10px;
-            height: 50px;
-            width: 50px;
-            grid-column-start: 4;
-            margin: 20px auto;
-            p{
-                line-height: 25px;
-            }
-        }
-        section:nth-child(2){
-            background-color: colors.$red-card;
+            color: colors.$white-card;
             padding: 5px 10px;
             height: 35px;
             width: 100px;
-            grid-row-start: 3;
+            z-index: 10;
             p{
                 line-height: 35px;
             }
         }
-    }
-    article:nth-child(2){
-        background-color: colors.$white-card;
+        section:nth-child(2){
+ 
+        }
     }
 }
