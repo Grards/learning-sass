@@ -1,20 +1,27 @@
 main {
   position: relative;
-  width: 500px;
-  height: 600px;
   margin: 50px auto;
   overflow: hidden;
-  display: grid;
-  grid-template-rows: 300px 300px;
-  transition: grid-template-rows 1s;
+  height: 500px;
+  width: 400px;
+  background-color: #e0e0e0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 main:hover {
   box-shadow: 0px 0px 20px 15px rgba(0, 0, 0, 0.37);
-  grid-template-rows: 150px 450px;
 }
 main:hover #picture {
+  transition: all 0.3s ease-in-out;
   filter: opacity(50%);
-  transform: scale(1.4);
+  transform: scale(1.2);
+}
+main:hover #content {
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-100px);
+}
+main:hover #content section:nth-child(3) {
+  visibility: visible;
+  background-color: #e0e0e0;
 }
 main #date {
   background-color: rgb(226, 64, 59);
@@ -28,33 +35,74 @@ main #date {
   right: 20px;
   text-align: center;
   line-height: 25px;
+  font-weight: 400;
 }
 main #picture {
+  height: 300px;
+  width: 100%;
   background-color: #e0e0e0;
   background-image: url(./img/india-child.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
   overflow: hidden;
 }
 main #content {
-  background-color: #e0e0e0;
-  text-align: center;
+  position: relative;
+  height: 200px;
+  width: 100%;
+  text-align: left;
   z-index: 5;
 }
 main #content section:nth-child(1) {
-  position: relative;
-  margin-top: -30px;
+  position: absolute;
+  margin-top: -40px;
   background-color: rgb(226, 64, 59);
   color: #e0e0e0;
   padding: 5px 10px;
   height: 35px;
   width: 100px;
   z-index: 10;
+  text-align: center;
 }
 main #content section:nth-child(1) p {
   line-height: 35px;
+  font-weight: 600;
+}
+main #content section:nth-child(2) {
+  padding: 20px 30px 0 30px;
+  background-color: #e0e0e0;
+}
+main #content section:nth-child(2) h2 {
+  text-transform: uppercase;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+main #content section:nth-child(2) h3 {
+  color: rgb(180, 43, 107);
+  font-weight: 100;
+}
+main #content section:nth-child(3) {
+  padding: 20px 30px 0 30px;
+  font-size: 15px;
+  visibility: hidden;
+  line-height: 2em;
+  color: rgba(0, 0, 0, 0.637);
+}
+main #comments {
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  background-color: #e0e0e0;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  color: rgba(0, 0, 0, 0.637);
+}
+main #comments p {
+  font-size: 14px;
+  line-height: 50px;
 }/*# sourceMappingURL=card.css.map */
